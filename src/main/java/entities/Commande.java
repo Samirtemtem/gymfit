@@ -26,7 +26,7 @@ public class Commande {
     private int userId;
     private LocalDateTime orderDate;
     private String status;
-    private float total;
+    public float total;
     private String paymentMethod;
     private List<CommandeItem> items;
 

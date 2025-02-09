@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="" />
+    <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AdminDashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/PointOfSaleManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testconnection/MainApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -22,14 +35,21 @@
   "keyToString": {
     "Application.MainApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master",
+    "last_opened_file_path": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/resources",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ssamir\Desktop\PiDev-EquitationCenter-master\PiDev-EquitationCenter-master\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />

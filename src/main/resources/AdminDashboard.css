@@ -1,0 +1,396 @@
+.root {
+    -fx-background-color: #262626;
+}
+
+.sidebar {
+    -fx-background-color: #262626;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-padding: 10;
+}
+
+.sidebar-title {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-cursor: hand;
+    -fx-min-width: 230;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #FF6B00;
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: derive(#FF6B00, -10%);
+}
+
+.sidebar-button .glyph-icon {
+    -fx-fill: white;
+    -fx-padding: 0 10 0 0;
+}
+
+.sidebar-button.active {
+    -fx-background-color: #FF6B00;
+    -fx-border-color: #FF6B00;
+    -fx-border-width: 0 0 0 3;
+}
+
+.logout-button {
+    -fx-border-color: #FF6B00;
+    -fx-background-color: #FF6B00;
+    -fx-border-radius: 5;
+}
+
+.logout-button:hover {
+    -fx-background-color: #e74c3c;
+}
+
+.content-area {
+    -fx-background-color: #1a1a1a;
+    -fx-padding: 20;
+}
+
+/* Common styles for all management views */
+.management-header {
+    -fx-background-color: #FF6B00;
+    -fx-padding: 20;
+}
+
+.management-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.card {
+    -fx-background-color: #262626;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(255,107,0,0.2), 15, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+.search-field {
+    -jfx-focus-color: #FF6B00;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: #808080;
+    -fx-text-fill: white;
+}
+
+.action-button {
+    -fx-background-color: #FF6B00;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+}
+
+.action-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.delete-button {
+    -fx-background-color: #4d4d4d;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #FF6B00;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-row-cell {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #333333;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #FF6B00;
+}
+
+/* Button Styles */
+.edit-button {
+    -fx-background-color: #4d4d4d;
+}
+
+/* Point of Sale specific styles */
+#posBtn .glyph-icon {
+    -fx-fill: #2ecc71;
+}
+
+#posBtn:hover .glyph-icon {
+    -fx-fill: white;
+}
+
+#posBtn.active {
+    -fx-border-color: #2ecc71;
+}
+
+.content-card {
+    -fx-background-color: #2A2A2A;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.product-card {
+    -fx-background-color: #333333;
+    -fx-padding: 15;
+    -fx-background-radius: 5;
+    -fx-alignment: center;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-min-height: 150;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(255,107,0,0.3), 10, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+.product-card .price-label {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0;
+}
+
+.product-card Label {
+    -fx-text-fill: white;
+}
+
+.section-title {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+.cart-user-label {
+    -fx-text-fill: #808080;
+    -fx-font-size: 14px;
+}
+
+.cart-item-card {
+    -fx-background-color: #333333;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+}
+
+.cart-item-card Label {
+    -fx-text-fill: white;
+}
+
+.summary-section {
+    -fx-padding: 15 0;
+    -fx-border-color: #404040;
+    -fx-border-width: 1 0 0 0;
+}
+
+.summary-label {
+    -fx-text-fill: #808080;
+}
+
+.summary-value {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.total-label {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.total-value {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.checkout-section {
+    -fx-padding: 10 0;
+    -fx-border-color: #404040;
+    -fx-border-width: 1 0 0 0;
+}
+
+.primary-button {
+    -fx-background-color: #FF6B00;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 12 15;
+    -fx-background-radius: 5;
+}
+
+.primary-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.custom-scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.custom-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.custom-scroll-pane .scroll-bar:vertical,
+.custom-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb,
+.custom-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 5;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .track,
+.custom-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+}
+
+.combo-box {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-mark-color: #FF6B00;
+}
+
+.combo-box .cell {
+    -fx-text-fill: white;
+    -fx-background-color: #333333;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+}
+
+.order-card {
+    -fx-background-color: #333333;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+}
+
+.order-card Label {
+    -fx-text-fill: white;
+}
+
+.order-id {
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF6B00;
+}
+
+.order-status {
+    -fx-padding: 5 10;
+    -fx-background-radius: 3;
+    -fx-font-size: 12px;
+}
+
+.order-status.pending {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+
+.order-status.processing {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.order-status.confirmed {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.order-status.shipped {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+}
+
+.order-status.delivered {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+
+.order-status.cancelled {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.search-field {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #808080;
+    -fx-padding: 8 12;
+    -fx-background-radius: 5;
+}
+
+.search-field:focused {
+    -fx-background-color: #404040;
+}
+
+.remove-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 25;
+    -fx-min-height: 25;
+    -fx-background-radius: 3;
+}
+
+.remove-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.edit-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.edit-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.custom-dialog {
+    -fx-background-color: #262626;
+}
+
+.custom-dialog > *.content.label {
+    -fx-text-fill: white;
+}
+
+.custom-dialog > *.button-bar > *.container {
+    -fx-background-color: #262626;
+}
+
+.custom-dialog > *.button-bar > *.container > *.button {
+    -fx-background-color: #FF6B00;
+    -fx-text-fill: white;
+}
+
+.custom-dialog > *.button-bar > *.container > *.button:hover {
+    -fx-opacity: 0.9;
+}
