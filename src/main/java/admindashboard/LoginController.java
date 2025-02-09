@@ -28,6 +28,11 @@ public class LoginController {
     @FXML private Label passwordErrorLabel;
 
     private UtilisateurService utilisateurService;
+    private static Utilisateur loggedInUser;
+
+    public static Utilisateur getLoggedInUser() {
+        return loggedInUser;
+    }
 
     @FXML
     public void initialize() {
@@ -86,19 +91,56 @@ public class LoginController {
             );
             
             if (user != null) {
+                // Store logged in user
+                loggedInUser = user;
+                
                 // Store user session if remember me is checked
                 if (rememberMeCheckbox.isSelected()) {
                     // TODO: Implement session storage
                 }
                 
-                // Navigate to main dashboard
-                navigateToDashboard();
+                // Navigate based on user role
+                if (user.getRole() == Utilisateur.Role.admin) {
+                    navigateToAdminDashboard();
+                } else {
+                    navigateToClientDashboard();
+                }
             } else {
                 passwordErrorLabel.setText("Invalid username or password");
                 passwordErrorLabel.setVisible(true);
             }
         } catch (SQLException e) {
             passwordErrorLabel.setText("Error during login: " + e.getMessage());
+            passwordErrorLabel.setVisible(true);
+        }
+    }
+
+    private void navigateToAdminDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/PointOfSaleManagement.fxml"));
+            Parent dashboardView = loader.load();
+            
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            Scene scene = new Scene(dashboardView);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            passwordErrorLabel.setText("Error loading admin dashboard: " + e.getMessage());
+            passwordErrorLabel.setVisible(true);
+        }
+    }
+
+    private void navigateToClientDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/ClientDashboard.fxml"));
+            Parent dashboardView = loader.load();
+            
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            Scene scene = new Scene(dashboardView);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            passwordErrorLabel.setText("Error loading client dashboard: " + e.getMessage());
             passwordErrorLabel.setVisible(true);
         }
     }
@@ -111,38 +153,15 @@ public class LoginController {
     @FXML
     private void handleSignUp() {
         try {
-            // Load the sign up view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/SignUp.fxml"));
             Parent signUpView = loader.load();
             
-            // Get the current stage
             Stage stage = (Stage) signUpLink.getScene().getWindow();
-            
-            // Set the new scene
             Scene scene = new Scene(signUpView);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             passwordErrorLabel.setText("Error loading sign up view: " + e.getMessage());
-            passwordErrorLabel.setVisible(true);
-        }
-    }
-
-    private void navigateToDashboard() {
-        try {
-            // Load the dashboard view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/PointOfSaleManagement.fxml"));
-            Parent dashboardView = loader.load();
-            
-            // Get the current stage
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            
-            // Set the new scene
-            Scene scene = new Scene(dashboardView);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            passwordErrorLabel.setText("Error loading dashboard: " + e.getMessage());
             passwordErrorLabel.setVisible(true);
         }
     }

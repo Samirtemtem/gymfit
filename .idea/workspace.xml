@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/OrderManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSale.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/ProductManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/SessionManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/SessionManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/SessionManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/UserManagement.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/UserManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PointOfSaleManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PointOfSaleManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

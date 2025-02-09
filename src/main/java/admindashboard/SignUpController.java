@@ -275,7 +275,6 @@ public class SignUpController {
     }
 
     private void showSuccessAndNavigateToLogin() {
-        // TODO: Show success message
         handleLogin();
     }
 
