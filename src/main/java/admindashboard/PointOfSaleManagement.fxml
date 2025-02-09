@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="admindashboard.PointOfSaleManagementController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <HBox spacing="20" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        
+        <!-- Left Side - Products -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <!-- Search Bar -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <JFXTextField fx:id="searchField" promptText="Search products..." 
+                            HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="categoryFilter" promptText="Category"/>
+            </HBox>
+
+            <!-- Products Grid -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                <FlowPane fx:id="productsGrid" hgap="10" vgap="10"/>
+            </ScrollPane>
+        </VBox>
+
+        <!-- Right Side - Cart -->
+        <VBox spacing="10" prefWidth="300" styleClass="cart-panel">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <!-- Cart Title -->
+            <Label text="Shopping Cart" styleClass="cart-title"/>
+
+            <!-- Cart Items -->
+            <ListView fx:id="cartItems" VBox.vgrow="ALWAYS"/>
+
+            <!-- Cart Summary -->
+            <VBox spacing="5" styleClass="cart-summary">
+                <HBox spacing="5">
+                    <Label text="Subtotal: "/>
+                    <Label fx:id="subtotalLabel" text="0.00"/>
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="Tax (20%): "/>
+                    <Label fx:id="taxLabel" text="0.00"/>
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="Total: "/>
+                    <Label fx:id="totalLabel" text="0.00"/>
+                </HBox>
+            </VBox>
+
+            <!-- Checkout Button -->
+            <JFXButton fx:id="checkoutBtn" text="Checkout" 
+                      styleClass="checkout-button" onAction="#handleCheckout"
+                      buttonType="RAISED" prefHeight="40" maxWidth="Infinity">
+                <graphic>
+                    <FontAwesomeIconView glyphName="SHOPPING_CART" size="20"/>
+                </graphic>
+            </JFXButton>
+        </VBox>
+    </HBox>
+</AnchorPane>

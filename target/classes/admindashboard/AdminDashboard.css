@@ -1,0 +1,150 @@
+.root {
+    -fx-background-color: #262626;
+}
+
+.sidebar {
+    -fx-background-color: #262626;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-padding: 10;
+}
+
+.sidebar-title {
+    -fx-text-fill: #FF6B00;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-cursor: hand;
+    -fx-min-width: 230;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #FF6B00;
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: derive(#FF6B00, -10%);
+}
+
+.sidebar-button .glyph-icon {
+    -fx-fill: white;
+    -fx-padding: 0 10 0 0;
+}
+
+.sidebar-button.active {
+    -fx-background-color: #FF6B00;
+    -fx-border-color: #FF6B00;
+    -fx-border-width: 0 0 0 3;
+}
+
+.logout-button {
+    -fx-border-color: #FF6B00;
+    -fx-background-color: #FF6B00;
+    -fx-border-radius: 5;
+}
+
+.logout-button:hover {
+    -fx-background-color: #e74c3c;
+}
+
+.content-area {
+    -fx-background-color: #1a1a1a;
+    -fx-padding: 20;
+}
+
+/* Common styles for all management views */
+.management-header {
+    -fx-background-color: #FF6B00;
+    -fx-padding: 20;
+}
+
+.management-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.card {
+    -fx-background-color: #262626;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(255,107,0,0.2), 15, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+.search-field {
+    -jfx-focus-color: #FF6B00;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: #808080;
+    -fx-text-fill: white;
+}
+
+.action-button {
+    -fx-background-color: #FF6B00;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+}
+
+.action-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.delete-button {
+    -fx-background-color: #4d4d4d;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #FF6B00;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-row-cell {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #333333;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #FF6B00;
+}
+
+/* Button Styles */
+.edit-button {
+    -fx-background-color: #4d4d4d;
+}
+
+/* Point of Sale specific styles */
+#posBtn .glyph-icon {
+    -fx-fill: #2ecc71;
+}
+
+#posBtn:hover .glyph-icon {
+    -fx-fill: white;
+}
+
+#posBtn.active {
+    -fx-border-color: #2ecc71;
+}

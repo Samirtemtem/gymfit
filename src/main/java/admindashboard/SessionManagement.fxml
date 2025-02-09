@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="admindashboard.SessionManagementController"
+          fx:id="rootPane"
+          prefHeight="800.0" prefWidth="1200.0">
+    
+    <AnchorPane style="-fx-background-color: #1a1a1a;">
+        <VBox spacing="20" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" 
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+            
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #FF6B00; -fx-padding: 20;">
+                <Label text="Session Management" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <JFXButton fx:id="addButton" text="Add New Session" 
+                          style="-fx-background-color: white; -fx-text-fill: #FF6B00;"
+                          onAction="#handleAddSession"/>
+            </HBox>
+            
+            <!-- Search and Filter -->
+            <HBox spacing="10" style="-fx-padding: 0 20;">
+                <JFXTextField fx:id="searchField" promptText="Search sessions..." 
+                             style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"
+                             HBox.hgrow="ALWAYS"/>
+                <DatePicker fx:id="dateFilter" promptText="Filter by date"
+                           style="-fx-text-fill: white; -fx-control-inner-background: #363636;"/>
+                <JFXComboBox fx:id="statusFilter" promptText="Filter by status"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+            </HBox>
+            
+            <!-- Session Cards Container -->
+            <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-padding: 20;">
+                <FlowPane fx:id="sessionCardsContainer" hgap="20" vgap="20"/>
+            </ScrollPane>
+        </VBox>
+    </AnchorPane>
+    
+    <!-- Add/Edit Session Dialog -->
+    <JFXDialog fx:id="sessionDialog" style="-fx-background-color: #262626;">
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #262626;">
+            <Label text="Session Details" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold"/>
+            
+            <!-- Client Selection -->
+            <VBox spacing="5">
+                <Label text="Client" style="-fx-text-fill: #808080;"/>
+                <JFXComboBox fx:id="userComboBox" promptText="Select Client"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="userErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Coach Selection -->
+            <VBox spacing="5">
+                <Label text="Coach" style="-fx-text-fill: #808080;"/>
+                <JFXComboBox fx:id="coachComboBox" promptText="Select Coach"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="coachErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Date and Time -->
+            <VBox spacing="5">
+                <Label text="Session Date and Time" style="-fx-text-fill: #808080;"/>
+                <HBox spacing="10">
+                    <DatePicker fx:id="dateField" promptText="Session Date"
+                              style="-fx-text-fill: white; -fx-control-inner-background: #363636;"/>
+                    <Spinner fx:id="hourSpinner" min="0" max="23" initialValue="12"
+                            style="-fx-text-fill: white; -fx-background-color: #363636;"/>
+                    <Label text=":" style="-fx-text-fill: white;"/>
+                    <Spinner fx:id="minuteSpinner" min="0" max="59" initialValue="0"
+                            style="-fx-text-fill: white; -fx-background-color: #363636;"/>
+                </HBox>
+                <Label fx:id="dateErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Session Type -->
+            <VBox spacing="5">
+                <Label text="Session Type" style="-fx-text-fill: #808080;"/>
+                <JFXTextField fx:id="typeField" promptText="Session Type"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="typeErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Duration -->
+            <VBox spacing="5">
+                <Label text="Duration (minutes)" style="-fx-text-fill: #808080;"/>
+                <JFXTextField fx:id="dureeField" promptText="Duration"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="dureeErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Intensity -->
+            <VBox spacing="5">
+                <Label text="Intensity" style="-fx-text-fill: #808080;"/>
+                <JFXComboBox fx:id="intensiteComboBox" promptText="Select Intensity"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="intensiteErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Objectives -->
+            <VBox spacing="5">
+                <Label text="Session Objectives" style="-fx-text-fill: #808080;"/>
+                <JFXTextArea fx:id="objectifsArea" promptText="Session objectives"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"
+                            prefRowCount="3"/>
+                <Label fx:id="objectifsErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Recommendations -->
+            <VBox spacing="5">
+                <Label text="Coach's Recommendations" style="-fx-text-fill: #808080;"/>
+                <JFXTextArea fx:id="recommandationsArea" promptText="Coach's recommendations"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"
+                            prefRowCount="3"/>
+                <Label fx:id="recommandationsErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Status -->
+            <VBox spacing="5">
+                <Label text="Status" style="-fx-text-fill: #808080;"/>
+                <JFXComboBox fx:id="statutComboBox" promptText="Session Status"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="statutErrorLabel" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;" managed="false" visible="false"/>
+            </VBox>
+            
+            <!-- Buttons -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <JFXButton text="Cancel" onAction="#handleCancel"
+                          style="-fx-text-fill: #808080;"/>
+                <JFXButton text="Save" onAction="#handleSave"
+                          style="-fx-background-color: #FF6B00; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </JFXDialog>
+</StackPane>

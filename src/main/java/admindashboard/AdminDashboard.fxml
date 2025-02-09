@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="admindashboard.AdminDashboardController"
+            prefHeight="800.0" prefWidth="1200.0"
+            stylesheets="@AdminDashboard.css">
+
+    <HBox AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" 
+          AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        
+        <!-- Sidebar -->
+        <VBox styleClass="sidebar" prefWidth="250" spacing="10">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            
+            <!-- Logo/Title -->
+            <Label text="Admin Dashboard" styleClass="sidebar-title"/>
+            
+            <!-- Navigation Buttons -->
+            <JFXButton fx:id="usersBtn" text="Users" styleClass="sidebar-button" onAction="#showUsers">
+                <graphic>
+                    <FontAwesomeIconView glyphName="USERS" size="20"/>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="sessionsBtn" text="Sessions" styleClass="sidebar-button" onAction="#showSessions">
+                <graphic>
+                    <FontAwesomeIconView glyphName="CALENDAR" size="20"/>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="productsBtn" text="Products" styleClass="sidebar-button" onAction="#showProducts">
+                <graphic>
+                    <FontAwesomeIconView glyphName="SHOPPING_CART" size="20"/>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="ordersBtn" text="Orders" styleClass="sidebar-button" onAction="#showOrders">
+                <graphic>
+                    <FontAwesomeIconView glyphName="LIST_ALT" size="20"/>
+                </graphic>
+            </JFXButton>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            
+            <!-- Logout Button -->
+            <JFXButton fx:id="logoutBtn" text="Logout" styleClass="sidebar-button, logout-button" onAction="#handleLogout">
+                <graphic>
+                    <FontAwesomeIconView glyphName="SIGN_OUT" size="20"/>
+                </graphic>
+            </JFXButton>
+        </VBox>
+        
+        <!-- Main Content Area -->
+        <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS" style="-fx-background-color: #1a1a1a;">
+            <!-- Content will be loaded here dynamically -->
+        </StackPane>
+    </HBox>
+</AnchorPane>
