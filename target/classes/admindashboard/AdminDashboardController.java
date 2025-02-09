@@ -87,11 +87,10 @@ public class AdminDashboardController implements Initializable {
 
     private void loadView(String fxml) {
         try {
-            Node view = FXMLLoader.load(getClass().getResource("/admindashboard/" + fxml));
+            Node view = FXMLLoader.load(getClass().getResource(fxml));
             contentArea.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Error loading " + fxml + ": " + e.getMessage());
         }
     }
 }

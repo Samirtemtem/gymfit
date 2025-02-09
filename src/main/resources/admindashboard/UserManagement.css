@@ -1,0 +1,89 @@
+.root {
+    -fx-background-color: #1a1a1a;
+}
+
+.scroll-pane {
+    -fx-background: #1a1a1a;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: #262626;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #FF6B00;
+    -fx-background-radius: 5em;
+}
+
+.jfx-text-field {
+    -jfx-focus-color: #FF6B00;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: #808080;
+}
+
+.jfx-password-field {
+    -jfx-focus-color: #FF6B00;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: #808080;
+}
+
+.jfx-combo-box {
+    -jfx-focus-color: #FF6B00;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: #808080;
+}
+
+.jfx-combo-box .cell {
+    -fx-text-fill: white;
+    -fx-background-color: #262626;
+}
+
+.jfx-button {
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+}
+
+.jfx-button:hover {
+    -fx-opacity: 0.9;
+}
+
+.user-card {
+    -fx-background-color: #262626;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(255,107,0,0.2), 15, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+.dialog-pane {
+    -fx-background-color: #262626;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #FF6B00;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20;
+}
+
+.alert {
+    -fx-background-color: #262626;
+}
+
+.alert .header-panel {
+    -fx-background-color: #FF6B00;
+}

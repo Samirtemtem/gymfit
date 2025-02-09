@@ -42,7 +42,7 @@
             <!-- Left Side - Products -->
             <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="card">
                 <padding>
-                    <Insets/>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
                 </padding>
                 
                 <!-- Search and Filter -->
@@ -63,10 +63,11 @@
                 <!-- Current Cart -->
                 <VBox spacing="10" styleClass="card" VBox.vgrow="ALWAYS">
                     <padding>
-                        <Insets/>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
                     </padding>
                     
                     <Label text="Current Cart" styleClass="section-title"/>
+                    <Label fx:id="cartUserLabel" styleClass="cart-user-label"/>
                     <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
                         <VBox fx:id="cartItemsContainer" spacing="10"/>
                     </ScrollPane>
@@ -104,7 +105,7 @@
                 <!-- Recent Orders -->
                 <VBox spacing="10" styleClass="card">
                     <padding>
-                        <Insets/>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
                     </padding>
                     
                     <Label text="Recent Orders" styleClass="section-title"/>

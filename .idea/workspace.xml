@@ -5,15 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AdminDashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PointOfSaleManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/OrderManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/ProductManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/SessionManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/UserManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Commande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CommandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testconnection/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AdminDashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AdminDashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PointOfSaleManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AdminDashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/AdminDashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/OrderManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/OrderManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSale.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSale.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/ProductManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/ProductManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/SessionManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/SessionManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/UserManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/UserManagement.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/UserManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/UserManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testconnection/calendar-view.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testconnection/calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/Login.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +55,7 @@
   "keyToString": {
     "Application.MainApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
