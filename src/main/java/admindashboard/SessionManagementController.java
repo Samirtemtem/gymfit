@@ -134,6 +134,9 @@ public class SessionManagementController implements Initializable {
         statutComboBox.setItems(FXCollections.observableArrayList(
             "Scheduled", "In Progress", "Completed", "Cancelled"
         ));
+        statusFilter.setItems(FXCollections.observableArrayList(
+            "Scheduled", "In Progress", "Completed", "Cancelled"
+        ));; 
         
         // Add search listener
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {

@@ -61,12 +61,9 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private void handleLogout() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/Login.fxml"));
             Parent loginView = loader.load();
-            
-            // Get the controller and initialize styles
-            LoginController loginController = loader.getController();
-            
+
             // Create new scene
             Scene scene = new Scene(loginView);
             
@@ -75,9 +72,7 @@ public class AdminDashboardController implements Initializable {
             
             // Set the new scene
             stage.setScene(scene);
-            
-            // Initialize styles after scene is set
-            loginController.initStyle();
+
             
             stage.show();
         } catch (IOException e) {

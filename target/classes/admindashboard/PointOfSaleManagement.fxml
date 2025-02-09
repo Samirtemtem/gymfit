@@ -12,9 +12,9 @@
             prefHeight="800.0" prefWidth="1200.0"
             stylesheets="@../AdminDashboard.css">
 
-    <VBox spacing="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+    <VBox spacing="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
           AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-        
+
         <!-- Top Bar -->
         <HBox spacing="10" styleClass="management-header">
             <padding>
@@ -44,10 +44,10 @@
                 <padding>
                     <Insets top="15" right="15" bottom="15" left="15"/>
                 </padding>
-                
+
                 <!-- Search and Filter -->
                 <HBox spacing="10" alignment="CENTER_LEFT">
-                    <JFXTextField fx:id="searchField" promptText="Search products..." 
+                    <JFXTextField fx:id="searchField" promptText="Search products..."
                                 HBox.hgrow="ALWAYS" styleClass="search-field"/>
                     <ComboBox fx:id="categoryFilter" promptText="Category" styleClass="dialog-combo"/>
                 </HBox>
@@ -65,7 +65,7 @@
                     <padding>
                         <Insets top="15" right="15" bottom="15" left="15"/>
                     </padding>
-                    
+
                     <Label text="Current Cart" styleClass="section-title"/>
                     <Label fx:id="cartUserLabel" styleClass="cart-user-label"/>
                     <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
@@ -90,9 +90,9 @@
 
                     <!-- Checkout Section -->
                     <VBox spacing="10" styleClass="checkout-section">
-                        <ComboBox fx:id="paymentMethodCombo" promptText="Select Payment Method" 
+                        <ComboBox fx:id="paymentMethodCombo" promptText="Select Payment Method"
                                 maxWidth="Infinity" styleClass="dialog-combo"/>
-                        <JFXButton fx:id="checkoutBtn" text="Complete Sale" 
+                        <JFXButton fx:id="checkoutBtn" text="Complete Sale"
                                  styleClass="action-button" onAction="#handleCheckout"
                                  maxWidth="Infinity">
                             <graphic>
@@ -107,14 +107,14 @@
                     <padding>
                         <Insets top="15" right="15" bottom="15" left="15"/>
                     </padding>
-                    
+
                     <Label text="Recent Orders" styleClass="section-title"/>
                     <HBox spacing="10" alignment="CENTER_LEFT">
                         <JFXTextField fx:id="orderSearchField" promptText="Search orders..."
                                     HBox.hgrow="ALWAYS" styleClass="search-field"/>
                         <ComboBox fx:id="orderStatusFilter" promptText="Status" styleClass="dialog-combo"/>
                     </HBox>
-                    
+
                     <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
                         <VBox fx:id="recentOrdersContainer" spacing="10"/>
                     </ScrollPane>
@@ -122,4 +122,4 @@
             </VBox>
         </HBox>
     </VBox>
-</AnchorPane> 
+</AnchorPane>
