@@ -1,0 +1,171 @@
+/* Theme Colors */
+:root {
+    /* Primary Colors */
+    -fx-primary: #FF6B00;
+    -fx-primary-light: #ff8533;
+    -fx-primary-dark: #cc5500;
+
+    /* Background Colors */
+    -fx-background-dark: #1a1a1a;
+    -fx-background-medium: #262626;
+    -fx-background-light: #363636;
+
+    /* Text Colors */
+    -fx-text-primary: white;
+    -fx-text-secondary: #808080;
+    -fx-text-disabled: #4d4d4d;
+
+    /* Accent Colors */
+    -fx-accent-success: #4CAF50;
+    -fx-accent-warning: #FFC107;
+    -fx-accent-error: #ff4444;
+
+    /* Status Colors */
+    -fx-status-pending: #FFC107;
+    -fx-status-processing: #2196F3;
+    -fx-status-confirmed: #4CAF50;
+    -fx-status-shipped: #9C27B0;
+    -fx-status-delivered: #4CAF50;
+    -fx-status-cancelled: #f44336;
+
+    /* Border Colors */
+    -fx-border-color: #4d4d4d;
+    
+    /* Component Colors */
+    -fx-component-background: #262626;
+    -fx-component-hover: #363636;
+    -fx-component-selected: #404040;
+    
+    /* Input Colors */
+    -fx-input-focus: #FF6B00;
+    -fx-input-unfocus: #4d4d4d;
+    -fx-input-error: #ff4444;
+    
+    /* Shadow Colors */
+    -fx-shadow-color: rgba(0, 0, 0, 0.2);
+    -fx-shadow-color-hover: rgba(255, 107, 0, 0.2);
+}
+
+/* Common Styles */
+.root {
+    -fx-background-color: -fx-background-dark;
+}
+
+/* Text Styles */
+.label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.text-secondary {
+    -fx-text-fill: -fx-text-secondary;
+}
+
+/* Button Styles */
+.jfx-button {
+    -fx-text-fill: -fx-text-primary;
+    -fx-background-color: -fx-primary;
+}
+
+.jfx-button:hover {
+    -fx-background-color: -fx-primary-light;
+}
+
+.jfx-button.secondary {
+    -fx-background-color: -fx-component-background;
+    -fx-text-fill: -fx-text-secondary;
+}
+
+/* Input Styles */
+.jfx-text-field {
+    -jfx-focus-color: -fx-input-focus;
+    -jfx-unfocus-color: -fx-input-unfocus;
+    -fx-prompt-text-fill: -fx-text-secondary;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.jfx-password-field {
+    -jfx-focus-color: -fx-input-focus;
+    -jfx-unfocus-color: -fx-input-unfocus;
+    -fx-prompt-text-fill: -fx-text-secondary;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.jfx-combo-box {
+    -jfx-focus-color: -fx-input-focus;
+    -jfx-unfocus-color: -fx-input-unfocus;
+    -fx-prompt-text-fill: -fx-text-secondary;
+}
+
+.jfx-combo-box .cell {
+    -fx-text-fill: -fx-text-primary;
+    -fx-background-color: -fx-component-background;
+}
+
+/* Card Styles */
+.card {
+    -fx-background-color: -fx-component-background;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, -fx-shadow-color, 10, 0, 0, 0);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(three-pass-box, -fx-shadow-color-hover, 15, 0, 0, 0);
+}
+
+/* Dialog Styles */
+.dialog {
+    -fx-background-color: -fx-component-background;
+}
+
+.dialog-title {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Error Labels */
+.error-label {
+    -fx-text-fill: -fx-accent-error;
+    -fx-font-size: 11px;
+}
+
+/* Status Styles */
+.status-pending { -fx-text-fill: -fx-status-pending; }
+.status-processing { -fx-text-fill: -fx-status-processing; }
+.status-confirmed { -fx-text-fill: -fx-status-confirmed; }
+.status-shipped { -fx-text-fill: -fx-status-shipped; }
+.status-delivered { -fx-text-fill: -fx-status-delivered; }
+.status-cancelled { -fx-text-fill: -fx-status-cancelled; }
+
+/* Scroll Bar Styling */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: -fx-background-medium;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: -fx-primary;
+    -fx-background-radius: 5em;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: -fx-component-background;
+}
+
+.table-view .column-header {
+    -fx-background-color: -fx-background-medium;
+}
+
+.table-row-cell {
+    -fx-background-color: -fx-component-background;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -fx-background-light;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -fx-component-selected;
+} 

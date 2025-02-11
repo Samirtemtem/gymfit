@@ -34,6 +34,11 @@
                 </graphic>
             </JFXButton>
             
+            <JFXButton fx:id="exercisesBtn" text="Exercises" styleClass="sidebar-button" onAction="#showExercises">
+                <graphic>
+                    <FontAwesomeIconView glyphName="HEARTBEAT" size="20"/>
+                </graphic>
+            </JFXButton>
 
             <JFXButton fx:id="posBtn" text="Point of Sale" styleClass="sidebar-button" onAction="#showPointOfSale">
                 <graphic>

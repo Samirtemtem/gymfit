@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="admindashboard.ExerciceManagementController"
+           prefHeight="800.0" prefWidth="950.0">
+            
+    <AnchorPane style="-fx-background-color: #1a1a1a;">
+        <VBox spacing="20" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" 
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+            
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" styleClass="management-header">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+                <Label text="Exercise Management" styleClass="management-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <JFXButton fx:id="addButton" text="Add New Exercise" 
+                          styleClass="action-button"
+                          onAction="#handleAddExercise">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="PLUS" size="16"/>
+                    </graphic>
+                </JFXButton>
+            </HBox>
+            
+            <!-- Search and Filter -->
+            <HBox spacing="10" style="-fx-padding: 0 20;">
+                <JFXTextField fx:id="searchField" promptText="Search exercises..." 
+                             styleClass="search-field"
+                             style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"
+                             HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="sessionFilter" promptText="Filter by Session" 
+                         styleClass="dialog-combo"/>
+            </HBox>
+            
+            <!-- Exercise Cards Container -->
+            <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-padding: 20;">
+                <FlowPane fx:id="exerciseCardsContainer" hgap="20" vgap="20"/>
+            </ScrollPane>
+        </VBox>
+    </AnchorPane>
+    
+    <!-- Add/Edit Exercise Dialog -->
+    <JFXDialog fx:id="exerciseDialog" styleClass="dialog">
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #262626;">
+            <Label text="Exercise Details" styleClass="dialog-title" style="-fx-text-fill: white;"/>
+            
+            <VBox spacing="5">
+                <Label text="Session" style="-fx-text-fill: #808080;"/>
+                <ComboBox fx:id="sessionComboBox" promptText="Select Session"
+                         styleClass="dialog-combo" maxWidth="Infinity"/>
+                <Label fx:id="sessionErrorLabel" 
+                       style="-fx-text-fill: #ff4444; -fx-font-size: 11px;"
+                       managed="false" visible="false"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Exercise Name" style="-fx-text-fill: #808080;"/>
+                <JFXTextField fx:id="nameField" promptText="Enter exercise name"
+                             style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="nameErrorLabel" 
+                       style="-fx-text-fill: #ff4444; -fx-font-size: 11px;"
+                       managed="false" visible="false"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Description" style="-fx-text-fill: #808080;"/>
+                <JFXTextArea fx:id="descriptionField" promptText="Enter exercise description"
+                            style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"
+                            prefRowCount="3"/>
+                <Label fx:id="descriptionErrorLabel" 
+                       style="-fx-text-fill: #ff4444; -fx-font-size: 11px;"
+                       managed="false" visible="false"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Duration (minutes)" style="-fx-text-fill: #808080;"/>
+                <JFXTextField fx:id="durationField" promptText="Enter duration in minutes"
+                             style="-fx-text-fill: white; -fx-prompt-text-fill: #808080;"/>
+                <Label fx:id="durationErrorLabel" 
+                       style="-fx-text-fill: #ff4444; -fx-font-size: 11px;"
+                       managed="false" visible="false"/>
+            </VBox>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <JFXButton text="Cancel" onAction="#handleCancel"
+                          style="-fx-text-fill: #808080;"/>
+                <JFXButton text="Save" onAction="#handleSave"
+                          style="-fx-background-color: #FF6B00; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </JFXDialog>
+</StackPane> 

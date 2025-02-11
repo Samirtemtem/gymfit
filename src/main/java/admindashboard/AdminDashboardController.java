@@ -19,6 +19,7 @@ public class AdminDashboardController implements Initializable {
     @FXML private StackPane contentArea;
     @FXML private JFXButton usersBtn;
     @FXML private JFXButton sessionsBtn;
+    @FXML private JFXButton exercisesBtn;
     @FXML private JFXButton productsBtn;
     @FXML private JFXButton ordersBtn;
     @FXML private JFXButton posBtn;
@@ -51,6 +52,11 @@ public class AdminDashboardController implements Initializable {
         setActiveButton(sessionsBtn);
     }
 
+    @FXML
+    public void showExercises() {
+        loadView("ExerciceManagement.fxml");
+        setActiveButton(exercisesBtn);
+    }
 
     @FXML
     private void showPointOfSale() {

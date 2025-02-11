@@ -17,7 +17,12 @@ import entities.Utilisateur;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Controller for the sign-up view that handles user registration functionality.
+ * Manages form validation, user creation, and navigation between views.
+ */
 public class SignUpController {
+    // FXML injected fields for form controls
     @FXML private JFXTextField firstNameField;
     @FXML private JFXTextField lastNameField;
     @FXML private JFXTextField usernameField;
@@ -29,6 +34,7 @@ public class SignUpController {
     @FXML private JFXButton signUpButton;
     @FXML private Hyperlink loginLink;
     
+    // FXML injected fields for error labels
     @FXML private Label firstNameErrorLabel;
     @FXML private Label lastNameErrorLabel;
     @FXML private Label usernameErrorLabel;
@@ -40,11 +46,22 @@ public class SignUpController {
 
     private UtilisateurService utilisateurService;
 
+    /**
+     * Initializes the controller.
+     * Sets up the user service and configures real-time validation for all form fields.
+     */
     @FXML
     public void initialize() {
         utilisateurService = new UtilisateurService();
-        
-        // Add real-time validation
+        setupValidation();
+    }
+
+    /**
+     * Sets up real-time validation for all form fields.
+     * Each field has its own validation rules and error messages.
+     */
+    private void setupValidation() {
+        // First Name validation
         firstNameField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 firstNameErrorLabel.setText("First name is required");
@@ -54,6 +71,7 @@ public class SignUpController {
             }
         });
         
+        // Last Name validation
         lastNameField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 lastNameErrorLabel.setText("Last name is required");
@@ -63,6 +81,7 @@ public class SignUpController {
             }
         });
         
+        // Username validation
         usernameField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 usernameErrorLabel.setText("Username is required");
@@ -75,6 +94,7 @@ public class SignUpController {
             }
         });
         
+        // Email validation
         emailField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 emailErrorLabel.setText("Email is required");
@@ -87,6 +107,7 @@ public class SignUpController {
             }
         });
         
+        // Address validation
         addressField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 addressErrorLabel.setText("Address is required");
@@ -96,6 +117,7 @@ public class SignUpController {
             }
         });
         
+        // Password validation
         passwordField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
                 passwordErrorLabel.setText("Password is required");
@@ -108,59 +130,118 @@ public class SignUpController {
             }
             
             // Check confirm password match
-            if (!confirmPasswordField.getText().isEmpty() && 
-                !confirmPasswordField.getText().equals(newValue)) {
-                confirmPasswordErrorLabel.setText("Passwords do not match");
-                confirmPasswordErrorLabel.setVisible(true);
-            } else {
-                confirmPasswordErrorLabel.setVisible(false);
-            }
+            validatePasswordMatch();
         });
         
+        // Confirm Password validation
         confirmPasswordField.textProperty().addListener((obs, old, newValue) -> {
-            if (newValue.trim().isEmpty()) {
-                confirmPasswordErrorLabel.setText("Please confirm your password");
-                confirmPasswordErrorLabel.setVisible(true);
-            } else if (!newValue.equals(passwordField.getText())) {
-                confirmPasswordErrorLabel.setText("Passwords do not match");
-                confirmPasswordErrorLabel.setVisible(true);
-            } else {
-                confirmPasswordErrorLabel.setVisible(false);
-            }
+            validatePasswordMatch();
         });
         
+        // Terms checkbox validation
         termsCheckbox.selectedProperty().addListener((obs, old, newValue) -> {
             termsErrorLabel.setVisible(!newValue);
         });
     }
 
+    /**
+     * Validates that the password and confirm password fields match.
+     * Shows error message if they don't match.
+     */
+    private void validatePasswordMatch() {
+        String password = passwordField.getText();
+        String confirmPassword = confirmPasswordField.getText();
+        
+        if (!confirmPassword.isEmpty() && !confirmPassword.equals(password)) {
+            confirmPasswordErrorLabel.setText("Passwords do not match");
+            confirmPasswordErrorLabel.setVisible(true);
+        } else {
+            confirmPasswordErrorLabel.setVisible(false);
+        }
+    }
+
+    /**
+     * Handles the sign-up button click.
+     * Validates all fields, creates a new user, and registers them in the system.
+     * Shows appropriate error messages if validation fails or if there are database errors.
+     */
     @FXML
     private void handleSignUp() {
-        // Clear previous errors
-        firstNameErrorLabel.setVisible(false);
-        lastNameErrorLabel.setVisible(false);
-        usernameErrorLabel.setVisible(false);
-        emailErrorLabel.setVisible(false);
-        addressErrorLabel.setVisible(false);
-        passwordErrorLabel.setVisible(false);
-        confirmPasswordErrorLabel.setVisible(false);
-        termsErrorLabel.setVisible(false);
+        clearErrors();
         
-        // Validate fields
+        if (!validateFields()) {
+            return;
+        }
+        
+        try {
+            // Create and register new user
+            Utilisateur user = createUser();
+            utilisateurService.ajouter(user);
+            showSuccessAndNavigateToLogin();
+        } catch (SQLException e) {
+            handleRegistrationError(e);
+        }
+    }
+
+    /**
+     * Creates a new User object from the form data.
+     * @return Utilisateur object with the form data
+     */
+    private Utilisateur createUser() {
+        Utilisateur user = new Utilisateur();
+        user.setNom(lastNameField.getText().trim());
+        user.setPrenom(firstNameField.getText().trim());
+        user.setUsername(usernameField.getText().trim());
+        user.setEmail(emailField.getText().trim());
+        user.setAdresse(addressField.getText().trim());
+        user.setPassword(passwordField.getText());
+        user.setRole(Utilisateur.Role.client);
+        return user;
+    }
+
+    /**
+     * Handles database errors during registration.
+     * Shows appropriate error messages for duplicate username/email.
+     * @param e The SQLException that occurred
+     */
+    private void handleRegistrationError(SQLException e) {
+        if (e.getMessage().contains("duplicate")) {
+            if (e.getMessage().contains("username")) {
+                usernameErrorLabel.setText("Username already exists");
+                usernameErrorLabel.setVisible(true);
+            } else if (e.getMessage().contains("email")) {
+                emailErrorLabel.setText("Email already registered");
+                emailErrorLabel.setVisible(true);
+            }
+        } else {
+            emailErrorLabel.setText("Error during registration: " + e.getMessage());
+            emailErrorLabel.setVisible(false);
+        }
+    }
+
+    /**
+     * Validates all form fields.
+     * Shows appropriate error messages for invalid fields.
+     * @return true if all fields are valid, false otherwise
+     */
+    private boolean validateFields() {
         boolean isValid = true;
         
+        // Validate First Name
         if (firstNameField.getText().trim().isEmpty()) {
             firstNameErrorLabel.setText("First name is required");
             firstNameErrorLabel.setVisible(true);
             isValid = false;
         }
         
+        // Validate Last Name
         if (lastNameField.getText().trim().isEmpty()) {
             lastNameErrorLabel.setText("Last name is required");
             lastNameErrorLabel.setVisible(true);
             isValid = false;
         }
         
+        // Validate Username
         String username = usernameField.getText().trim();
         if (username.isEmpty()) {
             usernameErrorLabel.setText("Username is required");
@@ -172,6 +253,7 @@ public class SignUpController {
             isValid = false;
         }
         
+        // Validate Email
         String email = emailField.getText().trim();
         if (email.isEmpty()) {
             emailErrorLabel.setText("Email is required");
@@ -183,13 +265,14 @@ public class SignUpController {
             isValid = false;
         }
         
-        String address = addressField.getText().trim();
-        if (address.isEmpty()) {
+        // Validate Address
+        if (addressField.getText().trim().isEmpty()) {
             addressErrorLabel.setText("Address is required");
             addressErrorLabel.setVisible(true);
             isValid = false;
         }
         
+        // Validate Password
         String password = passwordField.getText();
         if (password.isEmpty()) {
             passwordErrorLabel.setText("Password is required");
@@ -201,6 +284,7 @@ public class SignUpController {
             isValid = false;
         }
         
+        // Validate Confirm Password
         String confirmPassword = confirmPasswordField.getText();
         if (confirmPassword.isEmpty()) {
             confirmPasswordErrorLabel.setText("Please confirm your password");
@@ -212,59 +296,41 @@ public class SignUpController {
             isValid = false;
         }
         
+        // Validate Terms
         if (!termsCheckbox.isSelected()) {
             termsErrorLabel.setText("You must agree to the Terms and Conditions");
             termsErrorLabel.setVisible(true);
             isValid = false;
         }
         
-        if (!isValid) {
-            return;
-        }
-        
-        try {
-            // Create new user
-            Utilisateur user = new Utilisateur();
-            user.setNom(lastNameField.getText().trim());
-            user.setPrenom(firstNameField.getText().trim());
-            user.setUsername(username);
-            user.setEmail(email);
-            user.setAdresse(address);
-            user.setPassword(password);
-            user.setRole(Utilisateur.Role.client);
-            // Attempt to register
-            utilisateurService.ajouter(user);
-            
-            // Show success message and navigate to login
-            showSuccessAndNavigateToLogin();
-        } catch (SQLException e) {
-            // Check for duplicate username/email
-            if (e.getMessage().contains("duplicate")) {
-                if (e.getMessage().contains("username")) {
-                    usernameErrorLabel.setText("Username already exists");
-                    usernameErrorLabel.setVisible(true);
-                } else if (e.getMessage().contains("email")) {
-                    emailErrorLabel.setText("Email already registered");
-                    emailErrorLabel.setVisible(true);
-                }
-            } else {
-                emailErrorLabel.setText("Error during registration: " + e.getMessage());
-                emailErrorLabel.setVisible(true);
-            }
-        }
+        return isValid;
     }
 
+    /**
+     * Clears all error messages from the form.
+     */
+    private void clearErrors() {
+        firstNameErrorLabel.setVisible(false);
+        lastNameErrorLabel.setVisible(false);
+        usernameErrorLabel.setVisible(false);
+        emailErrorLabel.setVisible(false);
+        addressErrorLabel.setVisible(false);
+        passwordErrorLabel.setVisible(false);
+        confirmPasswordErrorLabel.setVisible(false);
+        termsErrorLabel.setVisible(false);
+    }
+
+    /**
+     * Handles navigation to the login view.
+     * Called when user clicks the login link or after successful registration.
+     */
     @FXML
     private void handleLogin() {
         try {
-            // Load the login view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/admindashboard/Login.fxml"));
             Parent loginView = loader.load();
             
-            // Get the current stage
             Stage stage = (Stage) loginLink.getScene().getWindow();
-            
-            // Set the new scene
             Scene scene = new Scene(loginView);
             stage.setScene(scene);
             stage.show();
@@ -274,10 +340,19 @@ public class SignUpController {
         }
     }
 
+    /**
+     * Shows success message and navigates to login view after successful registration.
+     */
     private void showSuccessAndNavigateToLogin() {
+        // TODO: Show success message
         handleLogin();
     }
 
+    /**
+     * Validates email format using a simple regex pattern.
+     * @param email The email to validate
+     * @return true if email format is valid, false otherwise
+     */
     private boolean isValidEmail(String email) {
         String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
         return email.matches(emailRegex);
