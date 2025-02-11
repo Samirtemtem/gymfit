@@ -5,31 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/esprit.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/AdminDashboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/ClientDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/ClientDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/OrderManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/OrderManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/ProductManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/ProductManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/SessionManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/UserManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/AdminDashboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/ClientDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/ClientDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/OrderManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/ProductManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/SessionManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/UserManagementController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +31,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Testconnection [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/java/admindashboard&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainApp.executor": "Run",
+    "Maven.Testconnection [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/java/admindashboard",
+    "last_opened_file_path": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ssamir\Desktop\PiDev-EquitationCenter-master\PiDev-EquitationCenter-master" />
       <recent name="C:\Users\ssamir\Desktop\PiDev-EquitationCenter-master\PiDev-EquitationCenter-master\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
