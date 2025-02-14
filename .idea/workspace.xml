@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39682217-f6e7-4fef-a098-5cd1761c6554" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/esprit.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/esprit.sql" beforeDir="false" afterPath="$PROJECT_DIR$/esprit.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/PassSecurity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/UserSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/ClientDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/ClientDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/OrderManagementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admindashboard/PointOfSaleManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/ProductManagementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admindashboard/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Produit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ProduitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/CalendarView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/PurgomalumFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/calendar-view.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testconnection/calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/PointOfSaleManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/admindashboard/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admindashboard/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/PointOfSaleManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admindashboard/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admindashboard/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testconnection/calendar-view.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testconnection/calendar.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MainApp.executor": "Run",
-    "Maven.Testconnection [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/java/admindashboard",
-    "last_opened_file_path": "C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Testconnection [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/ssamir/Desktop/PiDev-EquitationCenter-master/PiDev-EquitationCenter-master/src/main/java/admindashboard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ssamir/Courzelo1/CourzeloProject&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ssamir\Desktop\PiDev-EquitationCenter-master\PiDev-EquitationCenter-master" />

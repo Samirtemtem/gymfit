@@ -24,6 +24,14 @@ import services.PanierService;
 import services.ProduitService;
 import services.UtilisateurService;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javafx.scene.layout.StackPane;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -152,6 +160,24 @@ public class PointOfSaleManagementController implements Initializable {
         VBox card = new VBox(10);
         card.getStyleClass().addAll("product-card", "card");
         card.setAlignment(Pos.CENTER);
+        card.setPrefWidth(200);
+
+        // Image display
+        StackPane imageContainer = new StackPane();
+        imageContainer.setPrefHeight(150);
+        imageContainer.setStyle("-fx-background-color: #363636;");
+        
+        ImageView imageView = new ImageView();
+        imageView.setFitWidth(180);
+        imageView.setFitHeight(150);
+        imageView.setPreserveRatio(true);
+        
+        if (product.getImage() != null) {
+            Image image = new Image(new ByteArrayInputStream(product.getImage()));
+            imageView.setImage(image);
+        }
+        
+        imageContainer.getChildren().add(imageView);
 
         Label nameLabel = new Label(product.getName());
         nameLabel.setWrapText(true);
@@ -180,7 +206,7 @@ public class PointOfSaleManagementController implements Initializable {
         deleteButton.setOnAction(e -> handleDeleteProduct(product));
 
         buttonsBox.getChildren().addAll(addButton, editButton, deleteButton);
-        card.getChildren().addAll(nameLabel, priceLabel, stockLabel, buttonsBox);
+        card.getChildren().addAll(imageContainer, nameLabel, priceLabel, stockLabel, buttonsBox);
         return card;
     }
 
@@ -738,6 +764,45 @@ public class PointOfSaleManagementController implements Initializable {
         categoryErrorLabel.setVisible(false);
         categoryBox.getChildren().addAll(categoryLabel, categoryCombo, categoryErrorLabel);
         
+        // Add image upload field
+        VBox imageBox = new VBox(5);
+        Label imageLabel = new Label("Product Image");
+        imageLabel.setStyle("-fx-text-fill: #808080;");
+        
+        ImageView imagePreview = new ImageView();
+        imagePreview.setFitWidth(200);
+        imagePreview.setFitHeight(150);
+        imagePreview.setPreserveRatio(true);
+        
+        JFXButton uploadButton = new JFXButton("Upload Image");
+        uploadButton.setStyle("-fx-text-fill: white;");
+        
+        final byte[] imageData = new byte[0];
+        final File[] selectedFile = new File[1];
+        
+        uploadButton.setOnAction(e -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+            );
+            
+            File file = fileChooser.showOpenDialog(dialog.getDialogPane().getScene().getWindow());
+            if (file != null) {
+                selectedFile[0] = file;
+                try {
+                    Image image = new Image(file.toURI().toString());
+                    imagePreview.setImage(image);
+                } catch (Exception ex) {
+                    showError("Error loading image: " + ex.getMessage());
+                }
+            }
+        });
+        
+        imageBox.getChildren().addAll(imageLabel, imagePreview, uploadButton);
+        
+        // Add imageBox to dialog content
+        content.getChildren().add(content.getChildren().size(), imageBox);
+        
         // Real-time validation
         nameField.textProperty().addListener((obs, old, newValue) -> {
             if (newValue.trim().isEmpty()) {
@@ -846,6 +911,17 @@ public class PointOfSaleManagementController implements Initializable {
                     product.setPrice(Float.parseFloat(priceField.getText().trim()));
                     product.setStock(Integer.parseInt(stockField.getText().trim()));
                     product.setCategory(categoryCombo.getValue());
+                    
+                    if (selectedFile[0] != null) {
+                        try (FileInputStream fis = new FileInputStream(selectedFile[0])) {
+                            byte[] imageBytes = new byte[(int) selectedFile[0].length()];
+                            fis.read(imageBytes);
+                            product.setImage(imageBytes);
+                        } catch (IOException ex) {
+                            showError("Error reading image file: " + ex.getMessage());
+                            return;
+                        }
+                    }
                     
                     produitService.ajouter(product);
                     loadProducts();
@@ -1014,6 +1090,48 @@ public class PointOfSaleManagementController implements Initializable {
         categoryErrorLabel.setVisible(false);
         categoryBox.getChildren().addAll(categoryLabel, categoryCombo, categoryErrorLabel);
         
+        // Add image upload field
+        VBox imageBox = new VBox(5);
+        Label imageLabel = new Label("Product Image");
+        imageLabel.setStyle("-fx-text-fill: #808080;");
+        
+        ImageView imagePreview = new ImageView();
+        imagePreview.setFitWidth(200);
+        imagePreview.setFitHeight(150);
+        imagePreview.setPreserveRatio(true);
+        
+        if (product.getImage() != null) {
+            imagePreview.setImage(new Image(new ByteArrayInputStream(product.getImage())));
+        }
+        
+        JFXButton uploadButton = new JFXButton("Upload Image");
+        uploadButton.setStyle("-fx-text-fill: white;");
+        
+        final byte[] imageData = new byte[0];
+        final File[] selectedFile = new File[1];
+        
+        uploadButton.setOnAction(e -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+            );
+            
+            File file = fileChooser.showOpenDialog(dialog.getDialogPane().getScene().getWindow());
+            if (file != null) {
+                selectedFile[0] = file;
+                try {
+                    Image image = new Image(file.toURI().toString());
+                    imagePreview.setImage(image);
+                } catch (Exception ex) {
+                    showError("Error loading image: " + ex.getMessage());
+                }
+            }
+        });
+        
+        imageBox.getChildren().addAll(imageLabel, imagePreview, uploadButton);
+        
+        content.getChildren().add(content.getChildren().size(), imageBox);
+        
         // Buttons
         HBox buttonBox = new HBox(10);
         buttonBox.setAlignment(Pos.CENTER_RIGHT);
@@ -1053,6 +1171,17 @@ public class PointOfSaleManagementController implements Initializable {
                     product.setPrice(Float.parseFloat(priceField.getText().trim()));
                     product.setStock(Integer.parseInt(stockField.getText().trim()));
                     product.setCategory(categoryCombo.getValue());
+                    
+                    if (selectedFile[0] != null) {
+                        try (FileInputStream fis = new FileInputStream(selectedFile[0])) {
+                            byte[] imageBytes = new byte[(int) selectedFile[0].length()];
+                            fis.read(imageBytes);
+                            product.setImage(imageBytes);
+                        } catch (IOException ex) {
+                            showError("Error reading image file: " + ex.getMessage());
+                            return;
+                        }
+                    }
                     
                     produitService.modifier(product);
                     loadProducts();

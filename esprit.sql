@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 11 fév. 2025 à 08:57
+-- Généré le : ven. 14 fév. 2025 à 12:33
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
@@ -24,23 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commande`
---
-
-CREATE TABLE `commande` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(20) NOT NULL DEFAULT 'PENDING',
-  `total` float NOT NULL DEFAULT 0,
-  `payment_method` varchar(20) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `exercice`
 --
 
@@ -51,22 +34,6 @@ CREATE TABLE `exercice` (
   `description_e` varchar(200) NOT NULL,
   `duree_e` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `panier`
---
-
-CREATE TABLE `panier` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `unit_price` float NOT NULL,
-  `subtotal` float NOT NULL,
-  `added_date` timestamp NOT NULL DEFAULT current_timestamp()
-) ;
 
 -- --------------------------------------------------------
 
@@ -82,7 +49,8 @@ CREATE TABLE `produit` (
   `stock` int(11) NOT NULL DEFAULT 0,
   `category` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `image` mediumblob NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -128,27 +96,11 @@ CREATE TABLE `utilisateur` (
 --
 
 --
--- Index pour la table `commande`
---
-ALTER TABLE `commande`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_commande_user` (`user_id`),
-  ADD KEY `idx_commande_status` (`status`);
-
---
 -- Index pour la table `exercice`
 --
 ALTER TABLE `exercice`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_seance` (`id_seance`);
-
---
--- Index pour la table `panier`
---
-ALTER TABLE `panier`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `idx_panier_user` (`user_id`);
 
 --
 -- Index pour la table `produit`
@@ -175,21 +127,9 @@ ALTER TABLE `utilisateur`
 --
 
 --
--- AUTO_INCREMENT pour la table `commande`
---
-ALTER TABLE `commande`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `exercice`
 --
 ALTER TABLE `exercice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `panier`
---
-ALTER TABLE `panier`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -215,23 +155,10 @@ ALTER TABLE `utilisateur`
 --
 
 --
--- Contraintes pour la table `commande`
---
-ALTER TABLE `commande`
-  ADD CONSTRAINT `commande_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateur` (`id`);
-
---
 -- Contraintes pour la table `exercice`
 --
 ALTER TABLE `exercice`
   ADD CONSTRAINT `exercice_ibfk_1` FOREIGN KEY (`id_seance`) REFERENCES `seance` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `panier`
---
-ALTER TABLE `panier`
-  ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `produit` (`id`),
-  ADD CONSTRAINT `panier_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `utilisateur` (`id`);
 
 --
 -- Contraintes pour la table `seance`

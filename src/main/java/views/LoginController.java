@@ -62,11 +62,12 @@ public class LoginController implements Initializable {
         
         // Attempt login
         Utilisateur user = utilisateurService.login(username, password);
+        System.out.println(user);
         if (user != null) {
             // Login successful
             try {
                 // Load appropriate dashboard based on user role
-                String dashboardPath = user.getRole().equals("ADMIN") 
+                String dashboardPath = user.getRole().equals("admin") 
                     ? "/admindashboard/AdminDashboard.fxml"
                     : "/userdashboard/UserDashboard.fxml";
                     

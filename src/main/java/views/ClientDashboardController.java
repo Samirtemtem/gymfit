@@ -1,8 +1,10 @@
-package admindashboard;
+package views;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+
+import admindashboard.LoginController;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -347,7 +349,6 @@ public class ClientDashboardController {
      * @param message The success message to display
      */
     private void showSuccessMessage(String message) {
-        // TODO: Implement a proper success message dialog
         System.out.println("Success: " + message);
     }
 
@@ -356,7 +357,6 @@ public class ClientDashboardController {
      * @param message The error message to display
      */
     private void showErrorMessage(String message) {
-        // TODO: Implement a proper error message dialog
         System.out.println("Error: " + message);
     }
 

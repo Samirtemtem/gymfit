@@ -1,4 +1,4 @@
-package admindashboard;
+package views;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;

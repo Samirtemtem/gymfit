@@ -11,13 +11,14 @@ public class ProduitService implements IService<Produit> {
 
     @Override
     public void ajouter(Produit produit) throws SQLException {
-        String req = "INSERT INTO produit (name, description, price, stock, category) VALUES (?, ?, ?, ?, ?)";
+        String req = "INSERT INTO produit (name, description, price, stock, category, image) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = conx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, produit.getName());
             ps.setString(2, produit.getDescription());
             ps.setFloat(3, produit.getPrice());
             ps.setInt(4, produit.getStock());
             ps.setString(5, produit.getCategory());
+            ps.setBytes(6, produit.getImage());
             ps.executeUpdate();
             
             // Get the generated ID
@@ -31,14 +32,15 @@ public class ProduitService implements IService<Produit> {
 
     @Override
     public void modifier(Produit produit) throws SQLException {
-        String req = "UPDATE produit SET name=?, description=?, price=?, stock=?, category=? WHERE id=?";
+        String req = "UPDATE produit SET name=?, description=?, price=?, stock=?, category=?, image=? WHERE id=?";
         try (PreparedStatement ps = conx.prepareStatement(req)) {
             ps.setString(1, produit.getName());
             ps.setString(2, produit.getDescription());
             ps.setFloat(3, produit.getPrice());
             ps.setInt(4, produit.getStock());
             ps.setString(5, produit.getCategory());
-            ps.setInt(6, produit.getId());
+            ps.setBytes(6, produit.getImage());
+            ps.setInt(7, produit.getId());
             ps.executeUpdate();
         }
     }
@@ -65,7 +67,8 @@ public class ProduitService implements IService<Produit> {
                     rs.getString("description"),
                     rs.getFloat("price"),
                     rs.getInt("stock"),
-                    rs.getString("category")
+                    rs.getString("category"),
+                    rs.getBytes("image")
                 );
                 produits.add(p);
             }
@@ -86,7 +89,8 @@ public class ProduitService implements IService<Produit> {
                         rs.getString("description"),
                         rs.getFloat("price"),
                         rs.getInt("stock"),
-                        rs.getString("category")
+                        rs.getString("category"),
+                        rs.getBytes("image")
                     );
                     return produit;
                 }
@@ -118,7 +122,8 @@ public class ProduitService implements IService<Produit> {
                         rs.getString("description"),
                         rs.getFloat("price"),
                         rs.getInt("stock"),
-                        rs.getString("category")
+                        rs.getString("category"),
+                        rs.getBytes("image")
                     );
                 }
             }
@@ -139,7 +144,8 @@ public class ProduitService implements IService<Produit> {
                         rs.getString("description"),
                         rs.getFloat("price"),
                         rs.getInt("stock"),
-                        rs.getString("category")
+                        rs.getString("category"),
+                        rs.getBytes("image")
                     );
                     produits.add(p);
                 }

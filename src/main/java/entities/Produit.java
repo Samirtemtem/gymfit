@@ -16,6 +16,7 @@ public class Produit {
     private float price;
     private int stock;
     private String category;
+    private byte[] image;
 
     public Produit() {
     }
@@ -27,6 +28,11 @@ public class Produit {
         setPrice(price);
         setStock(stock);
         setCategory(category);
+    }
+
+    public Produit(int id, String name, String description, float price, int stock, String category, byte[] image) {
+        this(id, name, description, price, stock, category);
+        this.image = image;
     }
 
     public int getId() {
@@ -95,6 +101,14 @@ public class Produit {
         this.category = category.toUpperCase();
     }
 
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     // Stock management methods
     public boolean hasEnoughStock(int requestedQuantity) {
         return stock >= requestedQuantity;
@@ -126,6 +140,7 @@ public class Produit {
                 ", price=" + price +
                 ", stock=" + stock +
                 ", category='" + category + '\'' +
+                ", image=" + Arrays.toString(image) +
                 '}';
     }
 }

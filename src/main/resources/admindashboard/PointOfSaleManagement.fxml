@@ -54,7 +54,11 @@
 
                 <!-- Products Grid -->
                 <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll-pane">
-                    <FlowPane fx:id="productsGrid" hgap="10" vgap="10"/>
+                    <FlowPane fx:id="productsGrid" hgap="10" vgap="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                    </FlowPane>
                 </ScrollPane>
             </VBox>
 

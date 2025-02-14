@@ -60,11 +60,9 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        // Clear previous errors
         usernameErrorLabel.setVisible(false);
         passwordErrorLabel.setVisible(false);
         
-        // Validate fields
         boolean isValid = true;
         
         if (usernameField.getText().trim().isEmpty()) {
@@ -84,22 +82,17 @@ public class LoginController {
         }
         
         try {
-            // Attempt login
+            System.out.println(usernameField.getText());
+            System.out.println(passwordField.getText());
+
             Utilisateur user = utilisateurService.login(
-                usernameField.getText().trim(),
-                passwordField.getText().trim()
+                usernameField.getText(),
+                passwordField.getText()
             );
             
             if (user != null) {
-                // Store logged in user
                 loggedInUser = user;
                 
-                // Store user session if remember me is checked
-                if (rememberMeCheckbox.isSelected()) {
-                    // TODO: Implement session storage
-                }
-                
-                // Navigate based on user role
                 if (user.getRole() == Utilisateur.Role.admin) {
                     navigateToAdminDashboard();
                 } else {
@@ -147,7 +140,6 @@ public class LoginController {
 
     @FXML
     private void handleForgotPassword() {
-        // TODO: Implement forgot password functionality
     }
 
     @FXML
